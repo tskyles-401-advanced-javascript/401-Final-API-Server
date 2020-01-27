@@ -7,9 +7,9 @@ const morgan = require('morgan');
 
 // Esoteric Resources
 const errorHandler = require( './middleware/500.js');
-const notFound = require( './middleware/404.js' );
-const authRouter = require( './auth/router.js' );
-const additionalRouter = require('./auth/additional-routes');
+const notFound = require( './middleware/404.js');
+const authRouter = require( './routes/router');
+const roleRouter = require('./routes/roles-routes');
 
 // Prepare the express app
 const app = express();
@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended:true}));
 // Routes
 app.use(express.static('public'));
 app.use(authRouter);
-app.use(additionalRouter);
+app.use(roleRouter);
 // Catchalls
 app.use(notFound);
 app.use(errorHandler);

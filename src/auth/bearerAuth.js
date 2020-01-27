@@ -1,5 +1,5 @@
 'use strict';
-const User = require('../auth/users-model');
+const User = require('../models/users');
 
 module.exports = (req, res, next) => {
 

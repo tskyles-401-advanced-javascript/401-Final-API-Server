@@ -1,7 +1,7 @@
 'use strict';
 
 require('dotenv').config('../.env');
-require('./roles-model');
+require('./roles');
 
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
