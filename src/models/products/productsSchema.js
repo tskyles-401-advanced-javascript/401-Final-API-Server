@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-require('./categories-schema');
+require('../categories/categoriesModel');
 
 const products = mongoose.Schema({
   name: { type: String, required: true },

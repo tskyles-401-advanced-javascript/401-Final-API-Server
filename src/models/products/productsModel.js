@@ -1,7 +1,7 @@
 'use strict';
 
 const DataModel = require('@tskyles/mongo-model');
-const schema = require('./schemas/products-schema');
+const schema = require('./productsSchema');
 
 /**
  * model for products
