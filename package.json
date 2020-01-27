@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/tskyles-401-advanced-javascript/401-Final-API-Server#readme",
   "dependencies": {
+    "@code-fellows/supergoose": "^1.0.1",
     "@tskyles/mongo-model": "^1.0.0",
     "bcrypt": "^3.0.2",
     "cors": "^2.8.4",

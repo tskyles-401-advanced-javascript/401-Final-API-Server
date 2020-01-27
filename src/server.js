@@ -10,7 +10,7 @@ const errorHandler = require( './middleware/500.js');
 const notFound = require( './middleware/404.js');
 const authRouter = require( './routes/authRouter');
 const roleRouter = require('./routes/roles-routes');
-const prodCatRouter = require('./routes/prodCatRouter');
+const prodCatRouter = require('./routes/modelRouter');
 
 // Prepare the express app
 const app = express();

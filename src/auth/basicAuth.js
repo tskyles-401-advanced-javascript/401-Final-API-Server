@@ -1,6 +1,6 @@
 'use strict';
 
-const User = require('../models/roles');
+const User = require('../models/users');
 
 module.exports = (req, res, next) => {
   

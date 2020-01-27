@@ -3,7 +3,7 @@ const User = require('../models/users');
 
 module.exports = (req, res, next) => {
 
-  if (!req.headers.authorization) { next('Invalid Login'); return;}
+  if (!req.headers.authorization) { next('Invalid Login: wrong header'); return;}
 
   let token = req.headers.authorization.split(' ').pop();
 

@@ -5,6 +5,9 @@ const router = express.Router();
 
 const categories = require('../models/categories/categoriesModel');
 const products = require('../models/products/productsModel');
+
+const bearerAuth = require('../auth/bearerAuth');
+const acl = require('../auth/acl-middleware');
 /**
  * sets model to inputted route or returns invalid model otherwise
  * @function getModel
@@ -31,11 +34,11 @@ function getModel(req, res, next){
 
 router.param('model', getModel);
 
-router.get('/api/v1/:model', handleGetAll);
-router.post('/api/v1/:model', handlePost);
-router.get('/api/v1/:model/:id', handleGetOne);
-router.put('/api/v1/:model/:id', handlePut);
-router.delete('/api/v1/:model/:id', handleDelete);
+router.get('/api/v1/:model', bearerAuth, handleGetAll);
+router.post('/api/v1/:model', bearerAuth, acl('create'), handlePost);
+router.get('/api/v1/:model/:id', bearerAuth, handleGetOne);
+router.put('/api/v1/:model/:id', bearerAuth, acl('update'), handlePut);
+router.delete('/api/v1/:model/:id', bearerAuth, acl('delete'), handleDelete);
 /**
  * get all documents in this route
  * @function handleGetAll
