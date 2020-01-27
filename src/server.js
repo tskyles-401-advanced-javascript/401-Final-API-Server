@@ -9,7 +9,7 @@ const morgan = require('morgan');
 const errorHandler = require( './middleware/500.js');
 const notFound = require( './middleware/404.js');
 const authRouter = require( './routes/authRouter');
-const roleRouter = require('./routes/roles-routes');
+const roleRouter = require('./routes/rolesRouter');
 const prodCatRouter = require('./routes/modelRouter');
 
 // Prepare the express app

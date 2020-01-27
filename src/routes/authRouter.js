@@ -21,6 +21,7 @@ authRouter.get('/users', bearerAuth, (req, res, next) => {
 
 authRouter.post('/signup', (req, res, next) => {
   let user = new User(req.body);
+  console.log(user);
   user.save()
     .then( (user) => {
       req.token = user.generateToken();

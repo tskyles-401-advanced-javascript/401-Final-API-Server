@@ -6,7 +6,7 @@
 module.exports = (capabilities) => {
   return (req, res, next) => {
     try {
-      if(req.user[0].userRole.capabilities.includes(capabilities)){
+      if(req.user.userRole[0].capabilities.includes(capabilities)){
         console.log('got it');
         next();
       }
