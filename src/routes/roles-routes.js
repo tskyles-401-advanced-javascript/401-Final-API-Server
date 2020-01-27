@@ -4,12 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 const Roles = require('../models/roles');
-
-const capabilities = {
-  admin: ['create','read','update','delete', 'superuser'],
-  editor: ['create', 'read', 'update'],
-  user: ['read'],
-};
+const capabilities = require('../models/roles-capabilities');
 
 router.post('/roles', (req, res, next) => {
   let roleArr = [];

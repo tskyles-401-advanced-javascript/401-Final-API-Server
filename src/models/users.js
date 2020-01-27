@@ -6,14 +6,9 @@ require('./roles');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const capabilities = require('../models/roles-capabilities');
 
 let usedTokens = new Set();
-
-let capabilities = {
-  user: ['read'],
-  editor: ['read', 'create', 'update'],
-  admin: ['read', 'create', 'update', 'delete'],
-};
 
 const users = new mongoose.Schema({
   username: {type:String, required:true, unique:true},
