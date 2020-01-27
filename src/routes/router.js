@@ -7,8 +7,9 @@ const User = require('../models/users');
 const auth = require('../auth/basicAuth');
 const oauth = require('../auth/oauth/google');
 const bearerAuth = require('../auth/bearerAuth');
+const acl = require('../auth/acl-middleware');
 
-authRouter.get('/users', (req, res, next) => {
+authRouter.get('/users', bearerAuth, (req, res, next) => {
   User.find({})
     .then(results => {
       const data = {
