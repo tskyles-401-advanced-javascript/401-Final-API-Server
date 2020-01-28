@@ -5,7 +5,7 @@ process.env.SECRET='test';
 // const supergoose = require('../supergoose');
 const auth = require('../../src/auth/basicAuth');
 const Users = require('../../src/models/users');
-const server = require('../../src/server');
+// const server = require('../../src/server');
 
 let users = {
   admin: {username: 'admin', password: 'password', role: 'admin'},
