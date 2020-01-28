@@ -23,7 +23,7 @@ describe('auth router', () => {
       let token;
       let resultsToken;
       console.log(users[type]);
-      it('can create user', () => {
+      xit('can create user', () => {
         return mockRequest.post('/signup')
           .send(users[type])
           .then(results => {
